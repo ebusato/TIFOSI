@@ -1,0 +1,43 @@
+digraph simPdf{
+"simPdf" [ color=red, label="RooSimultaneous
+simPdf"];
+"channelCat" [ color=blue, label="RooCategory
+channelCat"];
+"lhood_ch1" [ color=red, label="RooProdPdf
+lhood_ch1"];
+"pois_ch1" [ color=red, label="RooPoisson
+pois_ch1"];
+"Nobs_ch1" [ color=blue, label="RooRealVar
+Nobs_ch1"];
+"totYield_ch1" [ color=red, label="RooAddition
+totYield_ch1"];
+"mus_ch1" [ color=red, label="RooProduct
+mus_ch1"];
+"mu" [ color=blue, label="RooRealVar
+mu"];
+"sig_ch1" [ color=red, label="RooProduct
+sig_ch1"];
+"sigYield_ch1" [ color=blue, label="RooRealVar
+sigYield_ch1"];
+"sigInterpVar_ch1" [ color=red, label="RooStats::HistFactory::FlexibleInterpVar
+sigInterpVar_ch1"];
+"ttbar_ch1" [ color=red, label="RooProduct
+ttbar_ch1"];
+"ttbarYield_ch1" [ color=blue, label="RooRealVar
+ttbarYield_ch1"];
+"ttbarInterpVar_ch1" [ color=red, label="RooStats::HistFactory::FlexibleInterpVar
+ttbarInterpVar_ch1"];
+"simPdf" -> "channelCat";
+"simPdf" -> "lhood_ch1";
+"pois_ch1" -> "Nobs_ch1";
+"pois_ch1" -> "totYield_ch1";
+"ttbar_ch1" -> "ttbarInterpVar_ch1";
+"ttbar_ch1" -> "ttbarYield_ch1";
+"sig_ch1" -> "sigYield_ch1";
+"sig_ch1" -> "sigInterpVar_ch1";
+"mus_ch1" -> "mu";
+"mus_ch1" -> "sig_ch1";
+"totYield_ch1" -> "ttbar_ch1";
+"totYield_ch1" -> "mus_ch1";
+"lhood_ch1" -> "pois_ch1";
+}
